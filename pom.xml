@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Eureka Service Registry</name>
 	<description>Eureka Service Registry</description>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.0</spring-cloud.version>
@@ -29,6 +29,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -43,10 +48,12 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>eureka-service-registry</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
 			</plugin>
 		</plugins>
 	</build>
